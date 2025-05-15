@@ -1,0 +1,252 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #0e0e0e;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+/* Homepage Specific Background */
+.body1 {
+  position: relative;
+  background: url('images/img1.png') no-repeat center top fixed; /* change here */
+  background-size: cover;
+  background-position-y: 60px; /* shift image down by 60px (adjust as needed) */
+}
+
+
+.body1::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+  z-index: -1;
+}
+
+/* Navigation */
+nav {
+  background-color: rgba(26, 26, 26, 0.9);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav .logo img {
+  height: 60px;
+  border-radius: 8px;
+}
+
+nav .logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #6e00ff, #ff00c8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border: 1px solid #6e00ff;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  background: linear-gradient(to right, #6e00ff, #ff00c8);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+/* Hero Section (only on home page) */
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  text-shadow: 2px 2px 10px #000;
+}
+
+/* Section Styling (shared) */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #00c8b3;
+  text-shadow: 1px 1px 8px #000;
+}
+
+.section p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 5px #000;
+}
+
+/* Cards (services page) */
+.card {
+  background-color: rgba(31, 31, 31, 0.85);
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* Coming Soon Label */
+.coming-soon .label {
+  background-color: #ff6b6b;
+  color: #fff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+/* Contact Form (contact page) */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: rgba(42, 42, 42, 0.8);
+  color: #ffffff;
+}
+
+.contact-form button {
+  background-color: #00c8b3;
+  color: #000;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #00a89a;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(26, 26, 26, 0.9);
+  padding: 2rem;
+  text-align: center;
+  color: #aaa;
+  margin-top: 4rem;
+}
+
+footer a {
+  color: #00c8b3;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+}
+
+.service-box-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.service-box-link:hover {
+  transform: scale(1.03);
+}
+
+.body2 {
+  position: relative;
+  background: url('images/img2.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.body2::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1); /* dark overlay */
+  z-index: -1;
+}
